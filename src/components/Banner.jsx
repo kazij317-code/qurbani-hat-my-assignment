@@ -1,11 +1,7 @@
 import Image from 'next/image';
-import myImage from '../assets/products/cow.jpg';
 
-
-import { Play } from 'lucide-react';
-import NavLink from './NavLink';
 import Marquee from "react-fast-marquee";
-import AnimalCard from './AnimalCard';
+
 
 const news = [
   {
@@ -62,21 +58,21 @@ const Banner = () => {
 
       <div className="mt-5 grid md:grid-cols-3 gap-5 mx-auto">
         <Image
-          src={myImage}
+          src="/images/cow.jpg"
           width={400}
           height={400}
           alt="Banner"
           className="rounded-lg"
         />
         <Image
-          src={myImage}
+          src="/images/cow.jpg"
           width={400}
           height={400}
           alt="Banner"
           className="rounded-lg"
         />
         <Image
-          src={myImage}
+          src="/images/cow.jpg"
           width={400}
           height={400}
           alt="Banner"

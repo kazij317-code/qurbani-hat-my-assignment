@@ -3,7 +3,8 @@ dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
+import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 import Providers from "./providers";
 
 
@@ -20,9 +21,9 @@ export default function RootLayout({ children }) {
       <body className="bg-gradient-to-br from-green-50 to-green-200">
         <Providers>
           <Navbar />
-          
+          <Toaster />
           {children}
-       
+          <Footer />
         </Providers>
       </body>
     </html>
