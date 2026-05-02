@@ -308,7 +308,7 @@ const Navbar = () => {
             <button onClick={() => setMenuOpen(false)}>✕</button>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-blue-800 text-bold">
             <NavLink
               href="/"
               onClick={() => setMenuOpen(false)}
@@ -316,26 +316,27 @@ const Navbar = () => {
               Home
             </NavLink>
             
-            <NavLink href={"/animals"} onClick={() => setMenuOpen(false)}>Animals</NavLink>
+            <NavLink className="text-blue-800 text-bold hover:bg-gray-100" href={"/animals"} onClick={() => setMenuOpen(false)}>Animals</NavLink>
 
             {/* ✅ SHOW ONLY WHEN LOGGED IN */}
             {user && (
               <>
                 <Link
                   href="/my-profile"
-                  className="px-2 py-2 rounded hover:bg-gray-100"
+                  className="px-2 py-2 rounded hover:bg-gray-100 text-blue-800 text-extra-bold"
                   onClick={() => setMenuOpen(false)}
                 >
                   My Profile
                 </Link>
 
                 <button
+                  href="/"
                   className="text-left px-2 py-2 rounded hover:bg-gray-100 text-red-500"
                   onClick={async () => {
                     await authClient.signOut();
                     setMenuOpen(false);
                   }}
-                  href="/"
+                  
                 >
                   Logout
                 </button>
