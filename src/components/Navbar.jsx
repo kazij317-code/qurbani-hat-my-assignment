@@ -40,7 +40,7 @@ const Navbar = () => {
 
         {/* LEFT */}
         <div className="flex-1">
-          <Image src={logo} alt="logo" width={80} height={80} />
+          <Image src={logo} alt="logo" width={90} height={90} />
         </div>
 
         {/* CENTER */}

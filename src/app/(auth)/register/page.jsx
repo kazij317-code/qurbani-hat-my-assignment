@@ -94,7 +94,7 @@ const RegisterPage = () => {
             <div className="p-4 rounded-xl bg-white">
                 <h2 class="font-bold text-3xl text-center mb-6">Register your account</h2>
 
-                <form className="space-y-4" onSubmit={handleSubmit(handleRegisterFunc)} autoComplete="off">
+                <form className="space-y-1" onSubmit={handleSubmit(handleRegisterFunc)} autoComplete="off">
 
                     <fieldset className="fieldset">
                         <legend className="fieldset-legend">Your Name</legend>
