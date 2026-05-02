@@ -153,7 +153,7 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            <NavLink href="/animals" onClick={closeMenu}>
+            <NavLink href="/animals" onClick={closeMenu} className="px-2 py-2 rounded hover:bg-gray-100  bg-green-200">
               Animals
             </NavLink>
 
@@ -161,14 +161,14 @@ const Navbar = () => {
               <>
                 <Link
                   href="/my-profile"
-                  className="px-2 py-2 rounded hover:bg-gray-100 text-blue-800"
+                  className="px-2 py-2 rounded hover:bg-gray-100  bg-green-200"
                   onClick={closeMenu}
                 >
                   My Profile
                 </Link>
 
                 <button
-                  className="text-left px-2 py-2 rounded hover:bg-gray-100 text-red-500"
+                  className="text-left px-2 py-2 rounded hover:bg-gray-100 bg-green-200 text-red-500"
                   onClick={async () => {
                     await authClient.signOut();
                     setProfileOpen(false);
