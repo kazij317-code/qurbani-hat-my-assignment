@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaPhoneAlt } from 'react-icons/fa';
+import { IoMdMail } from 'react-icons/io';
+import { MdPlace } from 'react-icons/md';
 import { RiTwitterXLine } from 'react-icons/ri';
 
 
@@ -125,11 +127,23 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 sm:gap-10">
             <div>
               <h3 className="font-semibold text-lg sm:text-[20px]">Contact Info</h3>
-              <p className="text-sm sm:text-base">Tel: 01712736526</p>
-              <p className="text-sm sm:text-base">Tel: Email: mithu00781@gmail.com</p>
-              <p className="text-sm sm:text-base">
-                306 Mujahidnagar, Rayerbag, Dhaka 1200, Bangladesh
-              </p>
+              <div className="flex items-center gap-2">
+                <FaPhoneAlt />
+                <p className="text-sm sm:text-base">01712736526</p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <IoMdMail />
+                <p className="text-sm sm:text-base">mithu00781@gmail.com</p>
+              </div>
+
+              <div className="flex text-2xl gap-1">
+                <MdPlace className="text-2xl" />
+                <p className="text-sm sm:text-base"> 306 Mujahidnagar, Rayerbag, Dhaka 1200, Bangladesh</p>
+              </div>
+
+
+
             </div>
 
             <div>
@@ -158,7 +172,7 @@ const Footer = () => {
 
         <div className="pt-6 sm:pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center text-center md:text-left text-sm gap-4">
           <p className="text-sm sm:text-base md:text-[17px]">
-            © {currentYear} Digitools. All rights reserved.
+            © {currentYear} QurbaniHat. All rights reserved.
           </p>
 
           <div className="text-sm sm:text-base md:text-[17px] flex flex-wrap justify-center md:justify-end gap-4 sm:gap-6 md:gap-8">
