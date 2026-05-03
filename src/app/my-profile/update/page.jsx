@@ -27,16 +27,7 @@ export default function UpdateProfile() {
     getUser();
   }, []);
 
-//   const handleUpdate = async (e) => {
-//     e.preventDefault();
 
-//     // ⚠️ Replace with your backend API later
-//     toast.success("Profile Updated (Demo)");
-
-//     console.log(form);
-//   };
-
-// ---------------------
 const handleUpdate = async (e) => {
   e.preventDefault();
 
@@ -49,14 +40,14 @@ const handleUpdate = async (e) => {
       body: JSON.stringify({
         name: form.name,
         image: form.image,
-        email: session?.user?.email, // 👈 IMPORTANT
+        email: session?.user?.email, 
       }),
     });
 
     const data = await res.json();
 
     if (data.success) {
-      toast.success("Profile Updated ✅");
+      toast.success("Profile Updated");
     } else {
       toast.error(data.message || "Update failed");
     }
@@ -65,7 +56,7 @@ const handleUpdate = async (e) => {
     console.error(error);
   }
 };
-//----------------------- 
+ 
 
   if (!session) return <p className="p-6">Loading...</p>;
 

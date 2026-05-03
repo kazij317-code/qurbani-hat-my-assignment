@@ -4,7 +4,7 @@ import { authClient } from '@/lib/auth-client';
 import React from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { useSearchParams } from "next/navigation";//new add
-const RightSidebar = () => {
+const GoogleLogin = () => {
   const searchParams = useSearchParams();//new add
    const callbackURL = searchParams.get("callbackUrl") || "/";//new add
     const handleGoogleSignin = async () => {
@@ -40,6 +40,6 @@ const RightSidebar = () => {
         );
     };
 
-    export default RightSidebar;
+    export default GoogleLogin;
 
 // ---------------------End:47_6-(1) to () --------------------------------

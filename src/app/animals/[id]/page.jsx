@@ -12,21 +12,10 @@ export default function DetailsPage() {
   const { id } = useParams();
   const animal = animals.find((a) => a.id == id);
 
-  // const [session, setSession] = useState(null);
 
-  // // Get session (works with your authClient)
-  // useEffect(() => {
-  //   async function getUser() {
-  //     const { data } = await authClient.getSession();
-  //     setSession(data);
-  //   }
-  //   getUser();
-  // }, []);
-
-  // --------------------
   const [session, setSession] = useState(null);
 
-  // 🔥 UPDATED: re-check session after Google login
+
   useEffect(() => {
     async function getUser() {
       const { data } = await authClient.getSession();
@@ -35,14 +24,14 @@ export default function DetailsPage() {
 
     getUser();
 
-    // 🔥 VERY IMPORTANT: detects when user comes back from Google login
+    
     window.addEventListener("focus", getUser);
 
     return () => {
       window.removeEventListener("focus", getUser);
     };
   }, []);
-  // -------------------
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -53,28 +42,9 @@ export default function DetailsPage() {
   if (!animal) return <p className="p-6">Animal not found</p>;
 
   return (
-    <div className="max-w-7xl mx-auto p-6 mt-20">
+    <div className="max-w-7xl mx-auto p-6 mt-25">
 
-      {/* DETAILS SECTION */}
-      {/* <div className="grid md:grid-cols-2 gap-10 items-start">
-
-        <Image
-          src={animal.image}
-          alt={animal.name}
-          width={800}
-          height={600}
-          className="w-full h-[420px] object-cover rounded-xl"
-        />
-
-        <div className="space-y-5">
-          <h1 className="text-3xl font-bold">{animal.name}</h1>
-          <h2 className="text-2xl font-semibold">৳ {animal.price}</h2>
-
-          <p className="text-gray-600">{animal.description}</p>
-        </div>
-      </div> */}
-
-      {/* ---------- */}
+      
       <div className="grid md:grid-cols-2 gap-10 items-start">
 
         {/* IMAGE */}
@@ -88,14 +58,12 @@ export default function DetailsPage() {
           />
         </div>
 
-        {/* DETAILS */}
+        
         <div className="space-y-5">
 
           <div className="flex gap-3">
 
-            {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">
-              Available
-            </div> */}
+            
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium">
               <span className="relative flex h-2.5 w-2.5">
@@ -131,18 +99,12 @@ export default function DetailsPage() {
           </p>
         </div>
       </div>
-      {/* ----------- */}
+      
 
       {/* LOGIN / BOOKING SECTION */}
       <div className="mt-10">
 
-        {/* ------------- */}
-        {/* {status === "loading" && (
-          <p>Loading...</p>
-        )} */}
-        {/* ------------- */}
-
-        {/* NOT LOGGED IN */}
+        
         {!session ? (
           <Link
             href={`/login?callbackUrl=/animals/${id}`}
@@ -152,7 +114,7 @@ export default function DetailsPage() {
           </Link>
 
         ) : (
-          /* LOGGED IN → SHOW FORM */
+          
           <form
             onSubmit={handleSubmit}
             className="mt-6 space-y-3 border p-5 rounded-xl"
@@ -160,13 +122,13 @@ export default function DetailsPage() {
             
             <input 
             className="border p-2 w-full" 
-            defaultValue={session?.user?.name}
+            // defaultValue={session?.user?.name}
             placeholder="Name" 
             required />
             
             <input 
             className="border p-2 w-full" 
-            defaultValue={session?.user?.email}
+            // defaultValue={session?.user?.email}
             placeholder="Email" 
             required />
             
@@ -183,5 +145,5 @@ export default function DetailsPage() {
     </div>
   );
 }
-// ----------------------
+
 

@@ -1,38 +1,3 @@
-// "use client";
-
-// export default function Register() {
-//   const handleRegister = async (e) => {
-//     e.preventDefault();
-
-//     const name = e.target.name.value;
-//     const email = e.target.email.value;
-//     const password = e.target.password.value;
-
-//     await fetch("/api/auth/sign-up/email", {
-//       method: "POST",
-//       body: JSON.stringify({ name, email, password }),
-//     });
-//   };
-
-//   return (
-//     <div className="max-w-md mx-auto mt-24 card p-6 shadow-xl">
-//       <h1 className="text-2xl font-bold text-center mb-4">Register</h1>
-
-//       <form onSubmit={handleRegister}>
-//         <input name="name" className="input input-bordered w-full mb-3" placeholder="Name" />
-//         <input name="email" className="input input-bordered w-full mb-3" placeholder="Email" />
-//         <input name="password" type="password" className="input input-bordered w-full mb-3" placeholder="Password" />
-
-//         <button className="btn btn-success w-full">
-//           Register
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// -----------------------------------------------------------------
-
 "use client"
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
@@ -42,7 +7,7 @@ import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import { useRouter } from 'next/navigation';
-import RightSidebar from '@/components/RightSidebar';
+import GoogleLogin from '@/components/GoogleLogin';
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -50,7 +15,7 @@ const RegisterPage = () => {
     const [isShowPassword, setIsShowPassword] = useState(false)
 
 
-    // const { register, handleSubmit, watch, formState: { errors } } = useForm()
+    
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm()
 
     const handleRegisterFunc = async (data) => {
@@ -58,9 +23,9 @@ const RegisterPage = () => {
         const { email, name, photo, password } = data;
 
         const { data: res, error } = await authClient.signUp.email({
-            name: name, // required
-            email: email, // required
-            password: password, // required
+            name: name, 
+            email: email, 
+            password: password, 
             image: photo,
             callbackURL: "/",
         });
@@ -74,14 +39,13 @@ const RegisterPage = () => {
         if (res) {
             // alert("Signup successfully")
             toast.success("Signup successfully");
-            // ---------
+            
             reset({
                 email: "",
                 password: ""
-            }); // 🔥 force clear values
-            // ----------
+            }); 
 
-            await authClient.signOut(); // ✅ prevent auto login
+            await authClient.signOut(); 
             router.push("/login");
         }
 
@@ -89,10 +53,10 @@ const RegisterPage = () => {
 
     return (
 
-        <div className="container mx-auto min-h-[80vh] bg-slate-100 flex justify-center items-center mt-20">
+        <div className="container mx-auto min-h-[80vh] bg-slate-100 flex justify-center items-center mt-22">
 
             <div className="p-4 rounded-xl bg-white">
-                <h2 class="font-bold text-3xl text-center mb-6">Register your account</h2>
+                <h2 class="font-bold text-3xl text-center mb-4">Register your account</h2>
 
                 <form className="space-y-1" onSubmit={handleSubmit(handleRegisterFunc)} autoComplete="off">
 
@@ -153,7 +117,7 @@ const RegisterPage = () => {
                 </form>
                 <p className="mt-4 text-center">If have An Account, Please <Link href={"/login"} className="text-red-600">Login</Link></p>
                 <div class="divider">OR</div>
-                <RightSidebar />
+                <GoogleLogin />
             </div>
         </div>
 

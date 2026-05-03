@@ -1,8 +1,9 @@
 import Hero from "@/components/Hero";
-import ExtraSection from "@/components/Hero";
+
 import animals from "@/data/animals.json";
 import AnimalCard from "@/components/AnimalCard";
-import Banner from "@/components/Banner";
+
+import ExtraSection from "@/components/ExtraSection";
 
 export default function Home() {
   return (
@@ -14,7 +15,10 @@ export default function Home() {
           <AnimalCard key={animal.id} animal={animal} />
         ))}
       </div>
-      <Banner/>
+   
+      <ExtraSection/>
+
+
     </div>
   );
 }

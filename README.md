@@ -1,12 +1,20 @@
 # 🐄 QurbaniHat – Livestock Booking Platform
 
-## 🌐 Live URL
-https://qurbani-hat-my-assignment-xfop-e12oc9w54.vercel.app/
-
----
 
 ## 📌 Project Purpose
 QurbaniHat is a modern livestock booking platform designed to simplify the process of buying animals for Qurbani. It allows users to browse, select, and book livestock online in a safe, transparent, and convenient way—without visiting crowded markets.
+
+
+---
+## 📸 Screenshot
+
+![Keen Keeper Screenshot](./public/p1.png)
+
+---
+
+
+## 🌐 Live URL
+https://qurbani-hat-my-assignment.vercel.app/
 
 ---
 
@@ -42,6 +50,7 @@ QurbaniHat is a modern livestock booking platform designed to simplify the proce
 - `react-fast-marquee`
 - `react-icons`
 - `lottie-react`
+- `React-Spring`
 
 ---
 

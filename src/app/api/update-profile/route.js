@@ -14,7 +14,7 @@ export async function POST(req) {
     await client.connect();
 
     const db = client.db("qurbani-hat");
-    const users = db.collection("user"); // ⚠️ check your collection name
+    const users = db.collection("user"); 
 
     const result = await users.updateOne(
       { email },

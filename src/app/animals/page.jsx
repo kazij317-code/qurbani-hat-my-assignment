@@ -12,7 +12,7 @@ export default function AnimalsPage() {
   };
 
   return (
-    <div className="p-6 mt-30">
+    <div className="p-6 mt-25">
       <button onClick={handleSort} className="bg-blue-500 text-white px-3 py-1 mb-4">
         Sort by Price
       </button>
